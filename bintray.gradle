@@ -21,20 +21,12 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
-
-// Bintray
-//Properties properties = new Properties()
-//properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-Properties properties = new Properties()
-File propFile = "${System.properties['user.home']}${File.separator}.gradle${File.separator}bintray.properties" as File
-properties.load(propFile.newDataInputStream())
+println 'Using bintray user with key: '
+println properties.getProperty("bintray.user")
+println properties.getProperty("bintray.apikey")
+println 'If above is null, your user and key are not set '
 
 bintray {
-    //user = properties.getProperty("bintray.user")
-    //user = System.getenv('BINTRAY_USERNAME')
-    //key = properties.getProperty("bintray.apikey")
-    //key = System.getenv('BINTRAY_API_KEY')
     user = bintrayUser
     key = bintrayKey
 
