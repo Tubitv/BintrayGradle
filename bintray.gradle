@@ -22,8 +22,8 @@ artifacts {
     archives sourcesJar
 }
 println 'Using bintray user with key: '
-println properties.getProperty("bintray.user")
-println properties.getProperty("bintray.apikey")
+println bintrayUser
+println bintrayKey
 println 'If above is null, your user and key are not set '
 
 bintray {
