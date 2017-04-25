@@ -34,7 +34,11 @@ bintray {
     pkg {
         repo = bintrayRepo
         name = bintrayName
-        userOrg = bintrayOrg
+
+        if(project.hasProperty('bintrayOrg')){
+          userOrg = bintrayOrg
+        }
+
         desc = libraryDescription
         websiteUrl = siteUrl
         vcsUrl = gitUrl
